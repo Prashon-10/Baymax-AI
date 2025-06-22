@@ -15,15 +15,17 @@ load_dotenv()
 
 class Assistant(Agent):
     def __init__(self) -> None:
-        super().__init__(instructions=AGENT_INSTRUCTION)
+        super().__init__(
+            instructions=AGENT_INSTRUCTION,
+            llm=google.beta.realtime.RealtimeModel(
+                voice="Charon",
+                temperature=0.8,
+            ),
+        )
 
 
 async def entrypoint(ctx: agents.JobContext):
-    session = AgentSession(
-        llm=google.beta.realtime.RealtimeModel(
-            voice="Charon",
-        )
-    )
+    session = AgentSession()
 
     await session.start(
         room=ctx.room,
@@ -32,6 +34,7 @@ async def entrypoint(ctx: agents.JobContext):
             # LiveKit Cloud enhanced noise cancellation
             # - If self-hosting, omit this parameter
             # - For telephony applications, use `BVCTelephony` for best results
+            video_enabled=True,
             noise_cancellation=noise_cancellation.BVC(),
         ),
     )

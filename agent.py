@@ -7,9 +7,7 @@ from livekit.plugins import (
 )
 from livekit.plugins import google
 from prompts import AGENT_INSTRUCTION, SESSION_INSTRUCTION
-
-from livekit.plugins.turn_detector.multilingual import MultilingualModel
-
+from tools import get_weather, search_web
 load_dotenv()
 
 
@@ -21,6 +19,7 @@ class Assistant(Agent):
                 voice="Charon",
                 temperature=0.8,
             ),
+            tools=[get_weather, search_web],
         )
 
 

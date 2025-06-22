@@ -28,7 +28,7 @@ async def search_web(context: RunContext, query: str) -> str:
     Search the web using DuckDuckGo
     """
     try:
-        results = DuckDuckGoSearchRun().run(tools_input=query)
+        results = DuckDuckGoSearchRun().run(tool_input=query)
         logging.info(f"Search results for '{query}': {results}")
         return results
     except Exception as e:

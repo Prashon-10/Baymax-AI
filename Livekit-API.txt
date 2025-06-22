@@ -1,0 +1,8 @@
+wss://jarvis-ai-la8np99h.livekit.cloud
+APIf6VUQfJM7bGH
+p6PfLzsMa7wfpUAWLLrfvnRWXn4dtf75ioj4NTYCenKG
+LIVEKIT_URL=wss://jarvis-ai-la8np99h.livekit.cloud
+LIVEKIT_API_KEY=APIf6VUQfJM7bGH
+LIVEKIT_API_SECRET=p6PfLzsMa7wfpUAWLLrfvnRWXn4dtf75ioj4NTYCenKG
+
+GOOGLE_API_KEY=AIzaSyBRGfjB-d0_m0mdzi1rfVNq-7_Xei2vDZ0
